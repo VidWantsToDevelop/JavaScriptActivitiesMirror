@@ -1,0 +1,50 @@
+html {
+    height: 100%;
+    width: 100%;    
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+body > div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body > div:nth-of-type(2) {
+    gap: 2rem;
+}
+
+body > div:nth-of-type(1) {
+    gap: 1rem;  
+}
+
+body > div:nth-of-type(1) > div:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body > div:nth-of-type(1) > div:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#images {
+    border-radius: 12px;
+    border: 4px solid black;
+}
