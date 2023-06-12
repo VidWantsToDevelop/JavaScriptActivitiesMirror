@@ -22,7 +22,7 @@ function changeCustomColor() {
 
     // Using switch case to change the background color
     switch (true) {
-        case (typeof number == "undefined"):
+        case (number == ""):
             body.style.backgroundColor = "red";
             body.style.color = "white";
             break;
