@@ -10,11 +10,20 @@ var body = document.querySelector('body');
 
 var number;
 
+// Just a small listener to track the last clicked button and determine the the function the the "Enter" key should call
+var lastClicked = customColorBtn;
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === "Enter") {
+        lastClicked.click();
+    }
+});
+
 var imgsSrc = "img/";
 var imgList = [];
 
 // function to change bg color from user input and add student id
-function changeCustomColor() {
+function changeCustomColor(e, isRandom = false) {
     idHolder.textContent = "My student id is: 200471230"
 
     // Grab the value from the input field
@@ -56,6 +65,14 @@ function changeCustomColor() {
             break;
     }
 
+    lastClicked = customColorBtn;
+
+    console.log(isRandom);
+
+    if (!isRandom) {
+        customNumberInput.value = "";
+    }
+
 }
 
 // function to change bg color from random no.
@@ -67,7 +84,9 @@ function changeRandomColor() {
 
     number = randomNum;
 
-    changeCustomColor();
+    changeCustomColor(null, true);
+
+    lastClicked = randomColorBtn;
 }
 
 // function to generate options for select list
