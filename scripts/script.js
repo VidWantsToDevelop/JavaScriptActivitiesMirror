@@ -13,9 +13,30 @@ const form = document.querySelector("form");
 
 const orderContainer = document.querySelector("#order-container");
 
+const infoElement = document.querySelector("#info");
+
+// Dynamically adding my name and studentd id
+setTimeout(() => {
+    infoElement.innerHTML += "Hi there, my name is David";
+
+    setTimeout(() => {
+        infoElement.innerHTML += "<br>";
+        infoElement.innerHTML += "By the way... here is my student ID - 200471230";
+    }, 2000)
+}, 2000);
+
 // Create a variable to store the order objects
 var cart = []
 var orderLimit = 6;
+
+// Create an Order class
+function Order(orderNumber, size, crust, toppings, isSpicy) {
+    this.orderNumber = orderNumber;
+    this.size = size;
+    this.crust = crust;
+    this.toppings = toppings;
+    this.isSpicy = isSpicy;
+}
 
 // Display the menu componenet
 menuComponent.style.display = "flex";
@@ -60,13 +81,7 @@ form.addEventListener("submit", (event) => {
     console.log(isSpicy);
 
     // Create a new order object
-    const order = {
-        orderNumber: cart.length + 1,
-        size: size,
-        crust: crust,
-        toppings: toppings,
-        isSpicy: isSpicy
-    }
+    const order = new Order(cart.length + 1, size, crust, toppings, isSpicy);
 
     cart.push(order);
 
@@ -155,6 +170,10 @@ function updateCart() {
         isSpicyElement.innerHTML = "Is Spicy: " + order.isSpicy;
         orderElement.appendChild(isSpicyElement);
 
+        const priceElement = document.createElement("p");
+        priceElement.innerHTML = "Price: $" + calculatePrice(order);
+        orderElement.appendChild(priceElement);
+
         orderContainer.appendChild(orderElement);
     });
 
@@ -173,3 +192,58 @@ function removeButtonEvent(e) {
 
     updateCart();
 }
+
+const calculatePrice = (order) => {
+
+    const size = order.size;
+    const crust = order.crust;
+    const toppings = order.toppings;
+    const isSpicy = order.isSpicy;
+
+    console.log('====================================');
+    console.log(isSpicy);
+    console.log('====================================');
+
+    var price = 0;
+
+    switch(size) {
+        case "small":
+            price += 5;
+            break;
+        case "medium":
+            price += 7;
+            break;
+        case "large":
+            price += 9;
+            break;
+        case "extra-large":
+            price += 12;
+            break;
+    }
+
+    switch(crust) {
+        case "thin":
+            price += 0;
+            break;
+        case "thick":
+            price += 1;
+            break;
+        case "cheese-stuffed":
+            price += 2;
+            break;
+        case "garlic-bread":
+            price += 2;
+            break;
+    }
+
+    if(toppings.length > 0) {
+        price += toppings.length * 0.5;
+    }
+
+    if(isSpicy == "yes") {
+        price += 1;
+    }
+
+    return price;
+
+};
