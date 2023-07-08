@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment3</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section id="menu-component" class="component-container">
+            <div class="component-wrapper">
+                <div class="menu">
+                    <h1>Menu</h1>
+                    <h4>By the way... here is my student ID - 200471230</h4>
+                    <button class="button" id="order-button">
+                        Order a pizza
+                    </button>
+                    <button class="button" id="cart-button">
+                        View my orders
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="form-component" class="component-container">
+            <div class="component-wrapper">
+                <div class="form">
+                    <div class="title-container">
+                        <button class="back"><-</button>
+                        <h1>Customize your pizza</h1>
+                    </div>
+                    <form>
+                        <div class="dropdown">
+                            <div class="label-wrapper">
+                                <label for="size">Size</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <select id="size" name="size">
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large" selected>Large</option>
+                                    <option value="extra-large">Monstrously Large</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="label-wrapper">
+                                <label for="crust">Crust</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <select id="crust" name="crust">
+                                    <option value="thin">Thin</option>
+                                    <option value="thick">Thick</option>
+                                    <option value="cheese-stuffed">Cheese Stuffed</option>
+                                    <option value="garlic-bread">Garlic Bread</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="toppings">Toppings</label>
+                            <div>
+                                <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" class="topping">
+                                <label for="pepperoni">Pepperoni</label>
+                                <input type="checkbox" id="mushrooms" name="mushrooms" value="mushrooms" class="topping">
+                                <label for="mushrooms">Mushrooms</label>
+                                <input type="checkbox" id="onions" name="onions" value="onions" class="topping">
+                                <label for="onions">Onions</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="spicy">Add a spicy sauce</label>
+                            <div>
+                                <input type="radio" id="yes" name="spicy" value="yes">
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="no" name="spicy" value="no" checked>
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="textarea-container">
+                                <div class="label-wrapper">
+                                    <label for="instructions">Special instructions</label>
+                                </div>
+                                <div class="input-wrapper">
+                                    <textarea id="instructions" name="instructions" rows="3" cols="25"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button">Submit an order</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="cart-component" class="component-container" hidden>
+            <div class="component-wrapper">
+                <div class="cart">
+                    <div class="title-container">
+                        <button class="back"><-</button>
+                        <h1>Your orders</h1>
+                    </div>
+                    <div id="order-container">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
