@@ -1,0 +1,53 @@
+{
+    "companyName" : "Sparkles of Happiness",
+    "headOffice" : "North York, ON",
+    "established" : 2015,
+    "active" : true,
+    "topFlavors" : [
+        {
+            "name" : "Chocolate Mint",
+            "calories" : 150,
+            "type" : "ice-cream",
+            "ingredients" : [
+                "Chocolate", "Mint", "Milk"
+            ],
+            "image" : "images/chocolate-mint.svg"
+        }, 
+        {
+            "name" : "Peach Mango",
+            "calories" : 150,
+            "type" : "sorbet",
+            "ingredients" : [
+                "Shot of a peach syrup", "Sorbet base", "Mango chunks"
+            ],
+            "image" : "images/peach-mango.svg"
+        },
+        {
+            "name": "Strawberry Passion",
+            "calories" : 220,
+            "type" : "sorbet",
+            "ingredients" : [
+                "Strawberries", "Passion fruit", "Sorbet base", "Chocolate drizzle", "Sprinkles"
+            ],
+            "image" : "images/strawberry-sprinkle.svg"
+        },
+        {
+            "name": "Crispy Cone",
+            "calories" : 300,
+            "type" : "ice-cream",
+            "ingredients" : [
+                "Crispy Cone", "Cream", "Vanilla syrup", "Love and Happiness"
+            ],
+            "image" : "images/crispy-cone.png"
+        },
+        {
+            "name": "Childhood Memories",
+            "calories" : 700,
+            "type" : "bowl of ice-cream",
+            "ingredients" : [
+                "Chocolate", "Vanilla", "Strawberry", "Sprinkles", "Chocolate drizzle", "Caramel drizzle", "Whipped cream", "Cherry", "Warm waffle"
+            ],
+            "image" : "images/childhood.png"
+        }
+    ]
+}
